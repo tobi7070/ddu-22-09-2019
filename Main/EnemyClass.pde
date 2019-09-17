@@ -1,4 +1,4 @@
-class Enemy {
+class Enemy extends GameObject {
   PVector location;
   PVector velocity;
   float lifespan;
@@ -7,7 +7,7 @@ class Enemy {
   boolean temp = true;
   
   Enemy(PVector l) {
-    velocity = new PVector(random(-1,1),random(-2,0));
+    velocity = new PVector(random(-1,1),random(-1,1));
     location = l.get();
     lifespan = 255.0;
     damage = 10.0;

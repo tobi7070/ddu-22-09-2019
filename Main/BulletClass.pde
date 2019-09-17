@@ -1,12 +1,12 @@
-class Bullet {
+class Bullet extends GameObject {
   PVector location;
   PVector velocity;
   float lifespan;
   
   Bullet(PVector l) {
-    velocity = new PVector(2, 0);
+    velocity = new PVector(random(-1,1), random(-1,1));
     location = l.get();
-    lifespan = 255;
+    lifespan = 255.0;
   }
   
   void run() {
