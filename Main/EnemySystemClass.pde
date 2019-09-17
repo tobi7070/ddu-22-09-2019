@@ -20,6 +20,7 @@ class EnemySystem extends GameObject {
   }
 
   void run() {
+    addEnemy();
     Iterator<Enemy> it = enemies.iterator();
     while (it.hasNext()) {
       Enemy e = it.next();
