@@ -1,5 +1,5 @@
 import java.util.Iterator;
-class EnemySystem extends GameObject {
+class EnemySystem {
   ArrayList<Enemy> enemies;
   PVector origin;
 
@@ -8,7 +8,8 @@ class EnemySystem extends GameObject {
     enemies = new ArrayList<Enemy>();
   }
 
- void addEnemy() {
+  // To Do: Do not replace dead enemy
+  void addEnemy() {
     float r = random(1);
     if (enemies.size() < 10) {
       if (r < 0.5) {

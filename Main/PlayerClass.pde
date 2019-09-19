@@ -1,4 +1,4 @@
-class Player extends GameObject{
+class Player {
   PVector location;
   
   Player(PVector l) {

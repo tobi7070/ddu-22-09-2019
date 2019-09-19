@@ -7,7 +7,7 @@ class Type1 extends Enemy {
   void display() {
     fill(0, lifespan);
     stroke(0, lifespan);
-    rect(location.x, location.y,8,8);
+    rect(location.x, location.y, size.x, size.y);
   }
 }
 
@@ -20,7 +20,7 @@ class Type2 extends Enemy {
   void display() {
     fill(0, lifespan);
     stroke(0, lifespan);
-    rect(location.x, location.y,8,8);
+    rect(location.x, location.y, size.x, size.y);
   }
 }
 
@@ -33,6 +33,6 @@ class Type3 extends Enemy {
   void display() {
     fill(0, lifespan);
     stroke(0, lifespan);
-    rect(location.x, location.y,8,8);
+    rect(location.x, location.y, size.x, size.y);
   }
 }
