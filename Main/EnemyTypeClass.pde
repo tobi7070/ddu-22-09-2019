@@ -6,7 +6,7 @@ class EasyEnemy extends Enemy {
   }
 
   void display() {
-    fill(0, lifespan);
+    fill(170, lifespan);
     stroke(0, lifespan);
     rect(location.x, location.y, size.x, size.y);
   }
@@ -20,7 +20,7 @@ class NormalEnemy extends Enemy {
   }
 
   void display() {
-    fill(0, lifespan);
+    fill(85, lifespan);
     stroke(0, lifespan);
     rect(location.x, location.y, size.x, size.y);
   }

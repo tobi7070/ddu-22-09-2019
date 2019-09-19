@@ -36,6 +36,17 @@ void draw() {
       }
     }
   }
+  if (p.isDead()) {
+    println("Player is dead! Game over!");
+    p.lifespan = 0;
+  }
+  // Player health
+  noStroke();
+  fill(200);
+  rect(10, 10, 16, p.lifespan);
+  stroke(0);
+  noFill();
+  rect(10, 10, 16, 200);
 }
 
 // Reset method

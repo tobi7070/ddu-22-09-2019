@@ -1,11 +1,12 @@
 class Player {
   PVector location, size;
-  float lifespan;
+  float lifespan, damage;
   
   Player(PVector l) {
     location = l.get();
     size = new PVector(16, 16);
     lifespan = 200;
+    damage = 10;
   }
   
   void run() {
@@ -14,6 +15,10 @@ class Player {
     if (isDead() == false) {
       display();
     }
+  }
+  
+  void attack() {
+    // bs.addBullet(location, direction, damage, "P");
   }
   
   void update() {
