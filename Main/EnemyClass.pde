@@ -32,7 +32,7 @@ class Enemy {
     if (inRange(p)) {
       angle = atan2(distance.y, distance.x);
       direction = new PVector(-1 * cos(angle) * magnitude, -1 * sin(angle) * magnitude);
-      println("Player in range!");
+      // println("Player in range!");
       if (frameCount % 45 == 0) {
           bs.addBullet(location, direction);
       }
