@@ -1,12 +1,12 @@
 class Bullet {
   PVector location, velocity, size;
-  float lifespan;
-  String type;
+  float lifespan, damage;
   
-  Bullet(PVector l, PVector v) {
+  Bullet(PVector l, PVector v, float d) {
     velocity = v.get();
     location = l.get();
     lifespan = 255.0;
+    damage = d;
     size = new PVector(8, 8);
   }
   

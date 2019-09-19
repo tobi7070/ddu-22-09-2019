@@ -1,7 +1,8 @@
-class Type1 extends Enemy {
+class EasyEnemy extends Enemy {
 
-  Type1(PVector l) {
+  EasyEnemy(PVector l) {
     super(l);
+    damage = 5;
   }
 
   void display() {
@@ -11,10 +12,11 @@ class Type1 extends Enemy {
   }
 }
 
-class Type2 extends Enemy {
+class NormalEnemy extends Enemy {
 
-  Type2(PVector l) {
+  NormalEnemy(PVector l) {
     super(l);
+    damage = 10;
   }
 
   void display() {
@@ -24,10 +26,11 @@ class Type2 extends Enemy {
   }
 }
 
-class Type3 extends Enemy {
+class HardEnemy extends Enemy {
 
-  Type3(PVector l) {
+  HardEnemy(PVector l) {
     super(l);
+    damage = 15;
   }
 
   void display() {

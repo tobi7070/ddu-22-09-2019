@@ -12,10 +12,12 @@ class EnemySystem {
   void addEnemy() {
     float r = random(1);
     if (enemies.size() < 10) {
-      if (r < 0.5) {
-        enemies.add(new Enemy(origin));
+      if (r < 0.33) {
+        enemies.add(new EasyEnemy(origin));
+      } else if (r < 0.66) {
+        enemies.add(new NormalEnemy(origin));
       } else {
-        enemies.add(new Type1(origin));
+        enemies.add(new HardEnemy(origin));
       }
     }
   }
@@ -30,5 +32,5 @@ class EnemySystem {
         it.remove();
       }
     }
-  }
+  } //<>//
 }

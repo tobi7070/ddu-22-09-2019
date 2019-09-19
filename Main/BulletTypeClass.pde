@@ -1,11 +1,11 @@
 class EnemyBullet extends Bullet {
-  EnemyBullet(PVector l, PVector v) {
-    super(l,v);
+  EnemyBullet(PVector l, PVector v, float d) {
+    super(l, v, d);
   }
 }
 
 class PlayerBullet extends Bullet {
-  PlayerBullet(PVector l, PVector v) {
-    super(l,v);
+  PlayerBullet(PVector l, PVector v, float d) {
+    super(l, v, d);
   }
 }

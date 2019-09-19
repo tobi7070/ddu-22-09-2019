@@ -10,7 +10,10 @@ class Player {
   
   void run() {
     update();
-    display();
+    // If player exists display
+    if (isDead() == false) {
+      display();
+    }
   }
   
   void update() {
@@ -20,5 +23,13 @@ class Player {
     noStroke();
     fill(175);
     ellipse(location.x,location.y, size.x, size.y);
+  }
+  
+  boolean isDead() {
+    if (lifespan <= 0) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
