@@ -1,6 +1,7 @@
 class Bullet {
   PVector location, velocity, size;
   float lifespan;
+  String type;
   
   Bullet(PVector l, PVector v) {
     velocity = v.get();

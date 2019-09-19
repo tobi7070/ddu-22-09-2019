@@ -1,9 +1,11 @@
 class Player {
   PVector location, size;
+  float lifespan;
   
   Player(PVector l) {
     location = l.get();
     size = new PVector(16, 16);
+    lifespan = 200;
   }
   
   void run() {

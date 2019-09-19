@@ -7,10 +7,15 @@ class BulletSystem {
     origin = location.get();
     bullets = new ArrayList<Bullet>();
   }
-
- void addBullet(PVector l, PVector v) {
-    bullets.add(new Bullet(l, v));
-  }
+  
+  void addBullet(PVector l, PVector v, String t) {
+    if (t == "E") {
+      bullets.add(new EnemyBullet(l, v));
+    }
+    if (t == "P") {
+      bullets.add(new PlayerBullet(l, v));
+    }
+  } 
 
   void run() {
     Iterator<Bullet> it = bullets.iterator();

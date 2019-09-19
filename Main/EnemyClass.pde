@@ -34,7 +34,7 @@ class Enemy {
       direction = new PVector(-1 * cos(angle) * magnitude, -1 * sin(angle) * magnitude);
       // println("Player in range!");
       if (frameCount % 45 == 0) {
-          bs.addBullet(location, direction);
+          bs.addBullet(location, direction, "E");
       }
     }
   }
