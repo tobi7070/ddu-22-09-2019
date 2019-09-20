@@ -32,6 +32,8 @@ class EnemySystem {
       difficulty += 0.2;
       total = 10;
       round++;
+      p.lifespan = 200;
+      p.location = new PVector();
     }
   }
   

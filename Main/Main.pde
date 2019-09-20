@@ -15,17 +15,8 @@ void draw() {
   background(255);
   es.run();
   p.run();
-  
-  // If player exists run bullets and check for collision
+  // Collision
   if (p.isDead() == false) {
-    // Player health
-    noStroke();
-    fill(200);
-    rect(10, 10, 16, p.lifespan);
-    stroke(0);
-    noFill();
-    rect(10, 10, 16, 200);
-
     bs.run();
     for (int i = bs.bullets.size() - 1; i >= 0; i--) {
       if (c.hasCollided(bs.bullets.get(i).location, bs.bullets.get(i).size.x, p.location, p.size.x / 2) && bs.bullets.get(i) instanceof EnemyBullet) {
@@ -45,7 +36,7 @@ void draw() {
     }
   }
   
-  // kill switch;
+  // Supper-duper secret cheat
   if (keyPressed == true && key == 32) {
     int i = es.enemies.size();
     if (i > 0) {
@@ -53,6 +44,14 @@ void draw() {
     }
   }
   
+  // Set High-Score!
+  /*
+  if (es.round > highscore) {
+    highscore = es.round;
+  }
+  */
+  
+  // Game Over
   if (p.isDead()) {
     noStroke();
     fill(0, 200);
@@ -71,8 +70,24 @@ void draw() {
     }
   }
 }
-
-// Reset method
+// Reset
 void reset() {
   setup();
+}
+
+// Controls
+void keyPressed() {
+  if (key == 'a')  p.left = true;
+  if (key == 'd')  p.right = true;
+  if (key == 's')  p.backward = true;
+  if (key == 'w')  p.forward = true;
+  if (key == ENTER) p.isAttacking = true;
+}
+
+void keyReleased() {
+  if (key == 'a') p.left = false;
+  if (key == 'd')  p.right = false;
+  if (key == 's')  p.backward = false;
+  if (key == 'w')  p.forward = false;
+  if (key == ENTER) p.isAttacking = false;
 }
