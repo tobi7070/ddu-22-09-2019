@@ -33,7 +33,9 @@ class EnemySystem {
       total = 10;
       round++;
       p.lifespan = 200;
-      p.location = new PVector();
+      p.location = new PVector(20, height - 20);
+      p.angle = 0;
+      t.setTime(60);
     }
   }
   

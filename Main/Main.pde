@@ -2,13 +2,17 @@ BulletSystem bs;
 EnemySystem es;
 Player p;
 Collision c;
+Timer t, lt;
+int hi = 1;
 
 void setup() {
   size(640,360);
   bs = new BulletSystem(new PVector(width/2, height/2));
-  es = new EnemySystem(new PVector(random(width), random(height)));
-  p = new Player(new PVector(width/2, height/2));
+  es = new EnemySystem(new PVector(width - 20, 20));
+  p = new Player(new PVector(20, height - 20));
   c = new Collision();
+  t = new Timer(60);
+  lt = new Timer(30);
 }
 
 void draw() {
@@ -43,16 +47,24 @@ void draw() {
       es.enemies.get(i - 1).lifespan = 0;
     }
   }
+  // Timer
+  t.countDownMin();
+  textSize(20);
+  textAlign(CENTER);
+  fill(0);
+  text("Time left: " +  nf(t.getTime(),0,2), width/2, 60);
   
-  // Set High-Score!
-  /*
-  if (es.round > highscore) {
-    highscore = es.round;
+  // Highscore
+  if (es.round > hi) {
+    hi = es.round;
   }
-  */
+  textSize(20);
+  textAlign(CENTER);
+  fill(0);
+  text("Best score: " + hi, width/2, 40) ; 
   
   // Game Over
-  if (p.isDead()) {
+  if (p.isDead() || t.getTime() < 0) {
     noStroke();
     fill(0, 200);
     rect(0,0,width,height);
@@ -63,9 +75,9 @@ void draw() {
     text("Game Over!", width/2, height/2);
     fill(200);
     text("Game is restarting...", width/2, height/2 + 40);
-    
-    // Implement better timer
-    if (frameCount % 300 == 0) {
+    lt.countDownSec();
+    println(lt.getTime());
+    if (lt.getTime() < 0) {
       reset();
     }
   }

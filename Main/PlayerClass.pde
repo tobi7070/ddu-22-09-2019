@@ -80,17 +80,18 @@ class Player {
     pushMatrix();
     translate(location.x, location.y);
     rotate(angle);
-    noStroke();
+    stroke(0);
     fill(100);
     rect(0, 0, size.x, size.y); 
     popMatrix(); 
-    noStroke();
     rectMode(CORNER);
+    // Health
+    noStroke();
     fill(10, 230, 105, 200);
-    rect(width/2 - 100, height - 20, lifespan, 10);
+    rect(location.x - 8, location.y - 16, lifespan/200 * 16, 4);
     stroke(0);
     noFill();
-    rect(width/2 - 100, height - 20, 200, 10);
+    rect(location.x - 8, location.y - 16, 16, 4);
   }
   
   boolean isDead() {
