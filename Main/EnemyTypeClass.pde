@@ -1,33 +1,36 @@
-class Type1 extends Enemy {
+class EasyEnemy extends Enemy {
 
-  Type1(PVector l) {
+  EasyEnemy(PVector l, float f) {
     super(l);
+    damage = 5 * f;
   }
 
   void display() {
-    fill(0, lifespan);
+    fill(170, lifespan);
     stroke(0, lifespan);
     rect(location.x, location.y, size.x, size.y);
   }
 }
 
-class Type2 extends Enemy {
+class NormalEnemy extends Enemy {
 
-  Type2(PVector l) {
+  NormalEnemy(PVector l, float f) {
     super(l);
+    damage = 10 * f;
   }
 
   void display() {
-    fill(0, lifespan);
+    fill(85, lifespan);
     stroke(0, lifespan);
     rect(location.x, location.y, size.x, size.y);
   }
 }
 
-class Type3 extends Enemy {
+class HardEnemy extends Enemy {
 
-  Type3(PVector l) {
+  HardEnemy(PVector l, float f) {
     super(l);
+    damage = 15 * f;
   }
 
   void display() {

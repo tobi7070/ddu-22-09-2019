@@ -8,12 +8,12 @@ class BulletSystem {
     bullets = new ArrayList<Bullet>();
   }
   
-  void addBullet(PVector l, PVector v, String t) {
+  void addBullet(PVector l, PVector v, float d, String t) {
     if (t == "E") {
-      bullets.add(new EnemyBullet(l, v));
+      bullets.add(new EnemyBullet(l, v, d));
     }
     if (t == "P") {
-      bullets.add(new PlayerBullet(l, v));
+      bullets.add(new PlayerBullet(l, v, d));
     }
   } 
 
