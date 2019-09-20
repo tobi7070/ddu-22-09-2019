@@ -1,8 +1,8 @@
 class EasyEnemy extends Enemy {
 
-  EasyEnemy(PVector l) {
+  EasyEnemy(PVector l, float f) {
     super(l);
-    damage = 5;
+    damage = 5 * f;
   }
 
   void display() {
@@ -14,9 +14,9 @@ class EasyEnemy extends Enemy {
 
 class NormalEnemy extends Enemy {
 
-  NormalEnemy(PVector l) {
+  NormalEnemy(PVector l, float f) {
     super(l);
-    damage = 10;
+    damage = 10 * f;
   }
 
   void display() {
@@ -28,9 +28,9 @@ class NormalEnemy extends Enemy {
 
 class HardEnemy extends Enemy {
 
-  HardEnemy(PVector l) {
+  HardEnemy(PVector l, float f) {
     super(l);
-    damage = 15;
+    damage = 15 * f;
   }
 
   void display() {

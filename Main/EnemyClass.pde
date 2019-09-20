@@ -50,7 +50,7 @@ class Enemy {
   }
   
   boolean isDead() {
-    if (lifespan < 0) {
+    if (lifespan <= 0) {
       return true;
     } else {
       return false;
