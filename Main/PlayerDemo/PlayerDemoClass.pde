@@ -1,17 +1,13 @@
 class Player {
 
-  float a = 0.0;
-  float aspeed = 0.1;
-  float speed = 2;
   boolean forward = false;
   boolean backward = false;
   boolean left = false;
   boolean right = false;
   boolean isAttacking = false;
-  PVector velocity = new PVector(0, 0);
   
-  PVector location, size, direction;
-  float lifespan, damage, magnitude;
+  PVector location, velocity, size, direction;
+  float lifespan, damage, magnitude, angle, angleVel, vel;
   
   Player(PVector l) {
     velocity = new PVector(0, 0);
@@ -20,11 +16,13 @@ class Player {
     lifespan = 200;
     damage = 10;
     magnitude = 2;
+    angle = 0.0;
+    angleVel = 0.1;
+    vel = 2;
   }
   
   void run() {
     update();
-    // If player exists display
     if (isDead() == false) {
       display();
     }
@@ -32,16 +30,16 @@ class Player {
   
   void turnangle() {
     if (left == true ) {
-      a = a - aspeed;
+      angle = angle - angleVel;
     }
     if (right == true) {
-      a = a + aspeed;
+      angle = angle + angleVel;
     }
-    if (a > 2*PI) {
-      a = 0;
+    if (angle > 2*PI) {
+      angle = 0;
     }
-    if (a < (2*PI)* -1) {
-      a = 0;
+    if (angle < (2*PI)* -1) {
+      angle = 0;
     }
   }
   
@@ -57,13 +55,13 @@ class Player {
   void update() {
     turnangle();
     if (forward) {
-      velocity.set(speed, 0);
-      velocity.rotate(a);
+      velocity.set(+ vel, 0);
+      velocity.rotate(angle);
       location.add(velocity);
     }
     if (backward) {
-      velocity.set(-speed, 0);
-      velocity.rotate(a);
+      velocity.set(- vel, 0);
+      velocity.rotate(angle);
       location.add(velocity);
     }
   }
@@ -71,10 +69,10 @@ class Player {
   void display() {
     pushMatrix();
     translate(location.x, location.y);
-    println(a);
+    println(angle);
     rectMode(CENTER);
     fill(100);
-    rotate(a);
+    rotate(angle);
     rect(0, 0, 30, 20);
     popMatrix(); 
   }
